@@ -15,7 +15,6 @@
 </head>
 <body>
 <form enctype="multipart/form-data" data-content-type="web_app_data">
-
   <div>
     <label for="hvsQuantity">Количество ХВС</label>
     <select id="hvsQuantity" name="hvsQuantity">
@@ -32,7 +31,6 @@
       <option value="10">10</option>
     </select>
   </div>
-
   <div>
     <label for="gvsQuantity">Количество ГВС</label>
     <select id="gvsQuantity" name="gvsQuantity">
@@ -49,27 +47,22 @@
       <option value="10">10</option>
     </select>
   </div>
-
   <div>
     <label for="totalAmount">Сумма</label>
     <input type="text" id="totalAmount" name="totalAmount" placeholder="Сумма">
   </div>
-
   <div>
     <label for="phone">Телефон</label>
     <input type="text" id="phone" inputmode="numeric" name="phone" placeholder="Телефон" value="+7">
   </div>
-
   <div>
     <input type="checkbox" id="copyPhoneCheckbox" name="copyPhoneCheckbox">
     <label for="copyPhoneCheckbox">Телефоны совпадают</label>
   </div>
-
   <div>
     <label for="contactNumber">Номер телефона звонящего</label>
     <input type="text" id="contactNumber" inputmode="numeric" name="contactNumber" placeholder="Номер телефона звонящего" value="+7">
   </div>
-
   <div>
     <label for="city">Город</label>
     <select id="city" name="city">
@@ -82,47 +75,38 @@
       <option value="ЦАО" selected></option>
     </select>
   </div>
-
   <div>
     <label for="street">Улица</label>
     <input type="text" id="street" name="street" placeholder="Улица">
   </div>
-
   <div>
     <label for="house">Дом</label>
     <input type="text" id="house" name="house" placeholder="Дом">
   </div>
-
   <div>
     <label for="building">Корпус</label>
     <input type="text" id="building" name="building" placeholder="Корпус">
   </div>
-
   <div>
     <label for="apartment">Квартира</label>
     <input type="text" id="apartment" name="apartment" placeholder="Квартира">
   </div>
-
   <div>
     <label for="entrance">Подъезд</label>
     <input type="text" id="entrance" name="entrance" placeholder="Подъезд">
   </div>
-
   <div>
     <label for="floor">Этаж</label>
     <input type="text" id="floor" name="floor" placeholder="Этаж">
   </div>
-
   <div>
     <label for="intercomCode">Код домофона</label>
     <input type="text" id="intercomCode" name="intercomCode" placeholder="Код домофона">
   </div>
-
   <div>
     <label for="workDate">Дата проведения работ</label>
     <input type="text" id="workDate" name="workDate" placeholder="Дата проведения работ" readonly>
   </div>
-
   <div>
     <label for="workInterval">Временной интервал работ</label>
     <select id="workInterval" name="workInterval">
@@ -157,7 +141,6 @@
   let citySelect = document.getElementById("city");
   let districtSelect = document.getElementById("district");
   let otherModelInput = document.getElementById("other_model");
-
   copyPhoneCheckbox.addEventListener("change", function() {
     if (copyPhoneCheckbox.checked) {
       contactNumberInput.value = phoneInput.value;
@@ -165,7 +148,6 @@
       contactNumberInput.value = "";
     }
   });
-
   function loadJSONFile(file, callback) {
     var xhr = new XMLHttpRequest();
     xhr.overrideMimeType('application/json');
@@ -177,7 +159,6 @@
     };
     xhr.send(null);
   }
-
   function loadCities() {
     loadJSONFile('all_city.json', function (response) {
       var cities = JSON.parse(response);
@@ -189,7 +170,6 @@
       });
     });
   }
-
   function loadDistricts() {
     citySelect.addEventListener('change', function () {
       var selectedCity = citySelect.value;
@@ -210,24 +190,19 @@
       });
     });
   }
-
   loadCities();
   loadDistricts();
-
   // Get tomorrow's date
   let tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
-
   // Configure flatpickr date picker with Russian locale
   flatpickr("#workDate", {
     dateFormat: "d.m.Y",
     defaultDate: tomorrow,
     locale: "ru"
   });
-
   submit.addEventListener("click", (event) => {
     event.preventDefault();
-
     let hvsQuantity = document.getElementById("hvsQuantity");
     let gvsQuantity = document.getElementById("gvsQuantity");
     let totalAmount = document.getElementById("totalAmount");
@@ -246,9 +221,16 @@
     let workInterval = document.getElementById("workInterval");
     let notes = document.getElementById("notes");
     let error = document.getElementById("error");
-
     error.innerText = "";
     let invalidFields = [];
+
+    // Проверка на наличие нецифровых символов в поле номера дома
+    if (house.value.trim() === "" || /\D/.test(house.value)) {
+      house.classList.add("error");
+      invalidFields.push("Номер дома должен содержать только цифры");
+    } else {
+      house.classList.remove("error");
+    }
 
     if (totalAmount.value.trim() === "") {
       totalAmount.classList.add("error");
@@ -256,54 +238,46 @@
     } else {
       totalAmount.classList.remove("error");
     }
-
     if (phone.value.trim() === "" || !/^\+7\d{10}$/.test(phone.value)) {
       phone.classList.add("error");
       invalidFields.push("Телефон");
     } else {
       phone.classList.remove("error");
     }
-
     if (contactNumber.value.trim() === "" || !/^\+7\d{10}$/.test(contactNumber.value)) {
       contactNumber.classList.add("error");
       invalidFields.push("Номер телефона звонящего");
     } else {
       contactNumber.classList.remove("error");
     }
-
     if (city.value.trim() === "") {
       city.classList.add("error");
       invalidFields.push("Город");
     } else {
       city.classList.remove("error");
     }
-
     if (district.value.trim() === "") {
       district.classList.add("error");
       invalidFields.push("Район");
     } else {
       district.classList.remove("error");
     }
-
     if (street.value.trim() === "") {
       street.classList.add("error");
       invalidFields.push("Улица");
     } else {
       street.classList.remove("error");
     }
-
     if (house.value.trim() === "") {
       house.classList.add("error");
       invalidFields.push("Дом");
     } else {
       house.classList.remove("error");
     }
-
     if (invalidFields.length > 0) {
       error.innerText = "Пожалуйста, правильно заполните следующие поля: " + invalidFields.join(", ");
       return;
     }
-
     let data = {
       hvsQuantity: hvsQuantity.value,
       gvsQuantity: gvsQuantity.value,
@@ -323,14 +297,11 @@
       workInterval: workInterval.value,
       notes: notes.value
     };
-
     // Send data to Telegram
     tg.sendData(JSON.stringify(data));
-
     // Close the window
     tg.close();
   });
-
   reset.addEventListener("click", () => {
     // Actions when "Cancel" button is clicked
     tg.close();
@@ -351,13 +322,9 @@
     });
   }
 });
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
   let phoneInput = document.getElementById("phone");
   let contactNumberInput = document.getElementById("contactNumber");
-
   phoneInput.addEventListener("focus", function() {
     if (phoneInput.value === "+7") {
       setTimeout(function() {
@@ -365,7 +332,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 0);
     }
   });
-
   contactNumberInput.addEventListener("focus", function() {
     if (contactNumberInput.value === "+7") {
       setTimeout(function() {
@@ -374,9 +340,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-
-
 </script>
-
 </body>
 </html>
