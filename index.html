@@ -154,16 +154,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-    document.getElementById("submit").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        showConfirmationModal();
-    });
+
+document.getElementById("submit").addEventListener("click", function(event) {
+    showConfirmationModal();
+});
+
 
     // Add event listener to the confirm button in the modal to continue with form submission
-    document.getElementById("confirmButton").addEventListener("click", function() {
-        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
-        document.getElementById("confirmationModal").style.display = "none";
-    });
+
+document.getElementById("confirmButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("confirmationModal").style.display = "none";
+    document.getElementById("submitForm").submit(); // Submit the form
+});
+
 
     // Add event listener to the cancel button in the modal to close it
     document.getElementById("cancelButton").addEventListener("click", function() {
@@ -197,16 +201,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-    document.getElementById("submit").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        showConfirmationModal();
-    });
+
+document.getElementById("submit").addEventListener("click", function(event) {
+    showConfirmationModal();
+});
+
 
     // Add event listener to the confirm button in the modal to continue with form submission
-    document.getElementById("confirmButton").addEventListener("click", function() {
-        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
-        document.getElementById("confirmationModal").style.display = "none";
-    });
+
+document.getElementById("confirmButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("confirmationModal").style.display = "none";
+    document.getElementById("submitForm").submit(); // Submit the form
+});
+
 
     // Add event listener to the cancel button in the modal to close it
     document.getElementById("cancelButton").addEventListener("click", function() {
@@ -240,16 +248,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-    document.getElementById("submit").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        showConfirmationModal();
-    });
+
+document.getElementById("submit").addEventListener("click", function(event) {
+    showConfirmationModal();
+});
+
 
     // Add event listener to the confirm button in the modal to continue with form submission
-    document.getElementById("confirmButton").addEventListener("click", function() {
-        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
-        document.getElementById("confirmationModal").style.display = "none";
-    });
+
+document.getElementById("confirmButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("confirmationModal").style.display = "none";
+    document.getElementById("submitForm").submit(); // Submit the form
+});
+
 
     // Add event listener to the cancel button in the modal to close it
     document.getElementById("cancelButton").addEventListener("click", function() {
@@ -492,16 +504,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-    document.getElementById("submit").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        showConfirmationModal();
-    });
+
+document.getElementById("submit").addEventListener("click", function(event) {
+    showConfirmationModal();
+});
+
 
     // Add event listener to the confirm button in the modal to continue with form submission
-    document.getElementById("confirmButton").addEventListener("click", function() {
-        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
-        document.getElementById("confirmationModal").style.display = "none";
-    });
+
+document.getElementById("confirmButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("confirmationModal").style.display = "none";
+    document.getElementById("submitForm").submit(); // Submit the form
+});
+
 
     // Add event listener to the cancel button in the modal to close it
     document.getElementById("cancelButton").addEventListener("click", function() {
