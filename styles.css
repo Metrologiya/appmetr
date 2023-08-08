@@ -43,9 +43,7 @@ textarea {
 
 }
 
-#agreeCheckbox + label {
-  font-weight: normal; /* Снимем жирное начертание с текста метки */
-}
+
 
 
 button[type="submit"],
