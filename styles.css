@@ -37,8 +37,18 @@ textarea {
   width: calc(100% - 20px);
 }
 
+
+#agreeCheckbox {
+  margin-bottom: 20px; /* Добавим отступ снизу */
+
+}
+
+#agreeCheckbox + label {
+  font-weight: normal; /* Снимем жирное начертание с текста метки */
+}
+
+
 button[type="submit"],
-button[type="button"],
 button[type="reset"] {
   padding: 10px;
   margin: 0 5px 0 0;

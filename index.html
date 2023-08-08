@@ -124,9 +124,10 @@
 <textarea id="notes" name="notes" placeholder="Примечания"></textarea>
 </div>
 <div id="error"></div>
+  <input id="agreeCheckbox" type="checkbox"/><label for="agreeCheckbox"> Я правильно заполнил все поля и проверил их 2 раза</label>
 <div class="button-group">
-<button id="submit" type="submit">Создать заявку</button>
-  <button id="checkButton" type="button">Проверить</button>
+<button disabled="disabled" id="submit" type="submit">Создать заявку</button>
+<button id="checkButton" type="button">Проверить</button>
 <button id="reset" style="margin-left: 10px" type="reset">Отмена</button>
 </div>
 </form>
@@ -343,7 +344,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-
 <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
 <div style="background-color: white; padding: 20px; max-width: 500px; width: 80%;">
 <div id="modalContent"></div>
@@ -352,7 +352,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <button onclick="document.getElementById('modal').style.display = 'none'">Принять</button>
 </div>
 </div>
-
 <script>
     document.getElementById('checkButton').addEventListener('click', function() {
         var content = '';
@@ -373,9 +372,20 @@ document.addEventListener("DOMContentLoaded", function() {
         content += 'Дата работы: ' + document.getElementById('workDate').value + '<br>';
         content += 'Интервал работы: ' + document.getElementById('workInterval').value + '<br>';
         content += 'Примечания: ' + document.getElementById('notes').value + '<br>';
-        
+
         document.getElementById('modalContent').innerHTML = content;
         document.getElementById('modal').style.display = 'flex';
+    });
+</script>
+
+<script>
+    document.getElementById('agreeCheckbox').addEventListener('change', function() {
+        var btn = document.querySelector('button[disabled]');
+        if (this.checked) {
+            btn.removeAttribute('disabled');
+        } else {
+            btn.setAttribute('disabled', 'disabled');
+        }
     });
 </script>
 </body>
