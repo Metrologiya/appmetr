@@ -1,287 +1,138 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Форма ввода</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Форма ввода</title>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+<style>
     .error {
       border: 2px solid red;
     }
   </style>
-  <!-- Include flatpickr CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Include flatpickr CSS -->
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
 </head>
 <body>
-<form enctype="multipart/form-data" data-content-type="web_app_data">
-  <div>
-    <label for="hvsQuantity">Количество ХВС</label>
-    <select id="hvsQuantity" name="hvsQuantity">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-  </div>
-  <div>
-    <label for="gvsQuantity">Количество ГВС</label>
-    <select id="gvsQuantity" name="gvsQuantity">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-  </div>
-  <div>
-    <label for="totalAmount">Сумма</label>
-    <input type="text" id="totalAmount" name="totalAmount" placeholder="Сумма">
-  </div>
-  <div>
-    <label for="phone">Телефон</label>
-    <input type="text" id="phone" inputmode="numeric" name="phone" placeholder="Телефон" value="+7">
-  </div>
-  <div>
-    <input type="checkbox" id="copyPhoneCheckbox" name="copyPhoneCheckbox">
-    <label for="copyPhoneCheckbox">Телефоны совпадают</label>
-  </div>
-  <div>
-    <label for="contactNumber">Номер телефона звонящего</label>
-    <input type="text" id="contactNumber" inputmode="numeric" name="contactNumber" placeholder="Номер телефона звонящего" value="+7">
-  </div>
-  <div>
-    <label for="city">Город</label>
-    <select id="city" name="city">
-      <option selected></option>
-    </select>
-  </div>
-  <div>
-    <label for="district">Район</label>
-    <select id="district" name="district">
-      <option value="ЦАО" selected></option>
-    </select>
-  </div>
-  <div>
-    <label for="street">Улица</label>
-    <input type="text" id="street" name="street" placeholder="Улица">
-  </div>
-  <div>
-    <label for="house">Дом</label>
-    <input type="text" id="house" name="house" placeholder="Дом">
-  </div>
-  <div>
-    <label for="building">Корпус</label>
-    <input type="text" id="building" name="building" placeholder="Корпус">
-  </div>
-  <div>
-    <label for="apartment">Квартира</label>
-    <input type="text" id="apartment" name="apartment" placeholder="Квартира">
-  </div>
-  <div>
-    <label for="entrance">Подъезд</label>
-    <input type="text" id="entrance" name="entrance" placeholder="Подъезд">
-  </div>
-  <div>
-    <label for="floor">Этаж</label>
-    <input type="text" id="floor" name="floor" placeholder="Этаж">
-  </div>
-  <div>
-    <label for="intercomCode">Код домофона</label>
-    <input type="text" id="intercomCode" name="intercomCode" placeholder="Код домофона">
-  </div>
-  <div>
-    <label for="workDate">Дата проведения работ</label>
-    <input type="text" id="workDate" name="workDate" placeholder="Дата проведения работ" readonly>
-  </div>
-  <div>
-    <label for="workInterval">Временной интервал работ</label>
-    <select id="workInterval" name="workInterval">
-      <option value="8:00 - 10:00">8:00 - 10:00</option>
-      <option value="10:00 - 12:00">10:00 - 12:00</option>
-      <option value="12:00 - 14:00">12:00 - 14:00</option>
-      <option value="14:00 - 16:00">14:00 - 16:00</option>
-      <option value="16:00 - 18:00">16:00 - 18:00</option>
-      <option value="18:00 - 20:00">18:00 - 20:00</option>
-    </select>
-  </div>
-  <div>
-    <label for="notes">Примечания</label>
-    <textarea id="notes" name="notes" placeholder="Примечания"></textarea>
-  </div>
-  <div id="error"></div>
-  <div class="button-group">
-    <button type="submit" id="submit">Создать заявку</button>
-    <button type="reset" id="reset" style="margin-left: 10px">Отмена</button>
-    <button type="button" id="check" style="margin-left: 10px">Проверить</button>
-  </div>
+<form data-content-type="web_app_data" enctype="multipart/form-data">
+<div>
+<label for="hvsQuantity">Количество ХВС</label>
+<select id="hvsQuantity" name="hvsQuantity">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+</div>
+<div>
+<label for="gvsQuantity">Количество ГВС</label>
+<select id="gvsQuantity" name="gvsQuantity">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+</div>
+<div>
+<label for="totalAmount">Сумма</label>
+<input id="totalAmount" name="totalAmount" placeholder="Сумма" type="text"/>
+</div>
+<div>
+<label for="phone">Телефон</label>
+<input id="phone" inputmode="numeric" name="phone" placeholder="Телефон" type="text" value="+7"/>
+</div>
+<div>
+<input id="copyPhoneCheckbox" name="copyPhoneCheckbox" type="checkbox"/>
+<label for="copyPhoneCheckbox">Телефоны совпадают</label>
+</div>
+<div>
+<label for="contactNumber">Номер телефона звонящего</label>
+<input id="contactNumber" inputmode="numeric" name="contactNumber" placeholder="Номер телефона звонящего" type="text" value="+7"/>
+</div>
+<div>
+<label for="city">Город</label>
+<select id="city" name="city">
+<option selected=""></option>
+</select>
+</div>
+<div>
+<label for="district">Район</label>
+<select id="district" name="district">
+<option selected="" value="ЦАО"></option>
+</select>
+</div>
+<div>
+<label for="street">Улица</label>
+<input id="street" name="street" placeholder="Улица" type="text"/>
+</div>
+<div>
+<label for="house">Дом</label>
+<input id="house" name="house" placeholder="Дом" type="text"/>
+</div>
+<div>
+<label for="building">Корпус</label>
+<input id="building" name="building" placeholder="Корпус" type="text"/>
+</div>
+<div>
+<label for="apartment">Квартира</label>
+<input id="apartment" name="apartment" placeholder="Квартира" type="text"/>
+</div>
+<div>
+<label for="entrance">Подъезд</label>
+<input id="entrance" name="entrance" placeholder="Подъезд" type="text"/>
+</div>
+<div>
+<label for="floor">Этаж</label>
+<input id="floor" name="floor" placeholder="Этаж" type="text"/>
+</div>
+<div>
+<label for="intercomCode">Код домофона</label>
+<input id="intercomCode" name="intercomCode" placeholder="Код домофона" type="text"/>
+</div>
+<div>
+<label for="workDate">Дата проведения работ</label>
+<input id="workDate" name="workDate" placeholder="Дата проведения работ" readonly="" type="text"/>
+</div>
+<div>
+<label for="workInterval">Временной интервал работ</label>
+<select id="workInterval" name="workInterval">
+<option value="8:00 - 10:00">8:00 - 10:00</option>
+<option value="10:00 - 12:00">10:00 - 12:00</option>
+<option value="12:00 - 14:00">12:00 - 14:00</option>
+<option value="14:00 - 16:00">14:00 - 16:00</option>
+<option value="16:00 - 18:00">16:00 - 18:00</option>
+<option value="18:00 - 20:00">18:00 - 20:00</option>
+</select>
+</div>
+<div>
+<label for="notes">Примечания</label>
+<textarea id="notes" name="notes" placeholder="Примечания"></textarea>
+</div>
+<div id="error"></div>
+<div class="button-group">
+<button id="submit" type="submit">Создать заявку</button>
+  <button id="checkButton" type="button">Проверить</button>
+<button id="reset" style="margin-left: 10px" type="reset">Отмена</button>
+</div>
 </form>
-<script src="https://telegram.org/js/telegram-web-app.js">
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to show the confirmation modal with all form data
-    function showConfirmationModal() {
-        document.getElementById("confirmationModal").style.display = "block";
-        // Add all form data to the modal
-        let formDataDisplay = document.getElementById("formDataDisplay");
-        formDataDisplay.innerHTML = `
-            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
-            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
-            <strong>Город:</strong> ${document.getElementById("city").value}<br>
-            <strong>Район:</strong> ${document.getElementById("district").value}<br>
-            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
-            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
-            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
-            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
-            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
-            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
-            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
-            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
-            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
-            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
-        `;
-    }
-
-    // Add event listener to the submit button to show the modal instead of submitting directly
-    
-document.getElementById("submit").addEventListener("click", function(event) {
-    // Directly submit the form without showing the modal
-    document.getElementById("submitForm").submit();
-});
-
-
-    // Add event listener to the confirm button in the modal to continue with form submission
-    
-document.getElementById("confirmButton").addEventListener("click", function(event) {
-    document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
-});
-
-
-    // Add event listener to the cancel button in the modal to close it
-    document.getElementById("cancelButton").addEventListener("click", function() {
-        document.getElementById("confirmationModal").style.display = "none";
-    });
-});
-
-document.getElementById("check").addEventListener("click", function(event) {
-    showConfirmationModal();
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr">
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to show the confirmation modal with all form data
-    function showConfirmationModal() {
-        document.getElementById("confirmationModal").style.display = "block";
-        // Add all form data to the modal
-        let formDataDisplay = document.getElementById("formDataDisplay");
-        formDataDisplay.innerHTML = `
-            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
-            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
-            <strong>Город:</strong> ${document.getElementById("city").value}<br>
-            <strong>Район:</strong> ${document.getElementById("district").value}<br>
-            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
-            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
-            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
-            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
-            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
-            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
-            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
-            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
-            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
-            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
-        `;
-    }
-
-    // Add event listener to the submit button to show the modal instead of submitting directly
-    
-document.getElementById("submit").addEventListener("click", function(event) {
-    // Directly submit the form without showing the modal
-    document.getElementById("submitForm").submit();
-});
-
-
-    // Add event listener to the confirm button in the modal to continue with form submission
-    
-document.getElementById("confirmButton").addEventListener("click", function(event) {
-    document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
-});
-
-
-    // Add event listener to the cancel button in the modal to close it
-    document.getElementById("cancelButton").addEventListener("click", function() {
-        document.getElementById("confirmationModal").style.display = "none";
-    });
-});
-
-document.getElementById("check").addEventListener("click", function(event) {
-    showConfirmationModal();
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js">
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to show the confirmation modal with all form data
-    function showConfirmationModal() {
-        document.getElementById("confirmationModal").style.display = "block";
-        // Add all form data to the modal
-        let formDataDisplay = document.getElementById("formDataDisplay");
-        formDataDisplay.innerHTML = `
-            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
-            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
-            <strong>Город:</strong> ${document.getElementById("city").value}<br>
-            <strong>Район:</strong> ${document.getElementById("district").value}<br>
-            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
-            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
-            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
-            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
-            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
-            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
-            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
-            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
-            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
-            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
-        `;
-    }
-
-    // Add event listener to the submit button to show the modal instead of submitting directly
-    
-document.getElementById("submit").addEventListener("click", function(event) {
-    // Directly submit the form without showing the modal
-    document.getElementById("submitForm").submit();
-});
-
-
-    // Add event listener to the confirm button in the modal to continue with form submission
-    
-document.getElementById("confirmButton").addEventListener("click", function(event) {
-    document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
-});
-
-
-    // Add event listener to the cancel button in the modal to close it
-    document.getElementById("cancelButton").addEventListener("click", function() {
-        document.getElementById("confirmationModal").style.display = "none";
-    });
-});
-
-document.getElementById("check").addEventListener("click", function(event) {
-    showConfirmationModal();
-});
-</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 <script>
   let tg = window.Telegram.WebApp;
   let submit = document.getElementById("submit");
@@ -491,68 +342,41 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to show the confirmation modal with all form data
-    function showConfirmationModal() {
-        document.getElementById("confirmationModal").style.display = "block";
-        // Add all form data to the modal
-        let formDataDisplay = document.getElementById("formDataDisplay");
-        formDataDisplay.innerHTML = `
-            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
-            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
-            <strong>Город:</strong> ${document.getElementById("city").value}<br>
-            <strong>Район:</strong> ${document.getElementById("district").value}<br>
-            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
-            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
-            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
-            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
-            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
-            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
-            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
-            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
-            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
-            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
-        `;
-    }
-
-    // Add event listener to the submit button to show the modal instead of submitting directly
-    
-document.getElementById("submit").addEventListener("click", function(event) {
-    // Directly submit the form without showing the modal
-    document.getElementById("submitForm").submit();
-});
-
-
-    // Add event listener to the confirm button in the modal to continue with form submission
-    
-document.getElementById("confirmButton").addEventListener("click", function(event) {
-    document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
-});
-
-
-    // Add event listener to the cancel button in the modal to close it
-    document.getElementById("cancelButton").addEventListener("click", function() {
-        document.getElementById("confirmationModal").style.display = "none";
-    });
-});
-
-document.getElementById("check").addEventListener("click", function(event) {
-    showConfirmationModal();
-});
 </script>
 
-<!-- Modal Confirmation Window -->
-<div id="confirmationModal" style="display:none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
-    <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
-        <h2>Подтвердите отправку данных</h2>
-        <div id="formDataDisplay"></div>
-        <p>!К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
-        По выполнении работ специалист выдаст вам квитанцию и акт о поверке. Акт о поверке ваших счетчиков необходимо предоставить вашей управляющей компании (расчетный центр).</p>
-        <button id="confirmButton">ОК</button>
-        <button id="cancelButton" style="margin-left: 10px;">ОТМЕНА</button>
-    </div>
+<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+<div style="background-color: white; padding: 20px; max-width: 500px; width: 80%;">
+<div id="modalContent"></div>
+<p>К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
+По выполнении работ специалист выдаст вам квитанцию и акт о поверке. Акт о поверке ваших счетчиков необходимо предоставить вашей управляющей компании (расчетный центр).</p>
+<button onclick="document.getElementById('modal').style.display = 'none'">Принять</button>
 </div>
+</div>
+
+<script>
+    document.getElementById('checkButton').addEventListener('click', function() {
+        var content = '';
+        content += 'Количество ХВС: ' + document.getElementById('hvsQuantity').value + '<br>';
+        content += 'Количество ГВС: ' + document.getElementById('gvsQuantity').value + '<br>';
+        content += 'Общая сумма: ' + document.getElementById('totalAmount').value + '<br>';
+        content += 'Телефон: ' + document.getElementById('phone').value + '<br>';
+        content += 'Номер контакта: ' + document.getElementById('contactNumber').value + '<br>';
+        content += 'Город: ' + document.getElementById('city').value + '<br>';
+        content += 'Район: ' + document.getElementById('district').value + '<br>';
+        content += 'Улица: ' + document.getElementById('street').value + '<br>';
+        content += 'Дом: ' + document.getElementById('house').value + '<br>';
+        content += 'Корпус: ' + document.getElementById('building').value + '<br>';
+        content += 'Квартира: ' + document.getElementById('apartment').value + '<br>';
+        content += 'Подъезд: ' + document.getElementById('entrance').value + '<br>';
+        content += 'Этаж: ' + document.getElementById('floor').value + '<br>';
+        content += 'Код домофона: ' + document.getElementById('intercomCode').value + '<br>';
+        content += 'Дата работы: ' + document.getElementById('workDate').value + '<br>';
+        content += 'Интервал работы: ' + document.getElementById('workInterval').value + '<br>';
+        content += 'Примечания: ' + document.getElementById('notes').value + '<br>';
+        
+        document.getElementById('modalContent').innerHTML = content;
+        document.getElementById('modal').style.display = 'flex';
+    });
+</script>
 </body>
 </html>
