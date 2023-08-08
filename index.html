@@ -128,9 +128,135 @@
     <button type="reset" id="reset" style="margin-left: 10px">Отмена</button>
   </div>
 </form>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js">
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to show the confirmation modal with all form data
+    function showConfirmationModal() {
+        document.getElementById("confirmationModal").style.display = "block";
+        // Add all form data to the modal
+        let formDataDisplay = document.getElementById("formDataDisplay");
+        formDataDisplay.innerHTML = `
+            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
+            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
+            <strong>Город:</strong> ${document.getElementById("city").value}<br>
+            <strong>Район:</strong> ${document.getElementById("district").value}<br>
+            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
+            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
+            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
+            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
+            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
+            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
+            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
+            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
+            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
+            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
+        `;
+    }
+
+    // Add event listener to the submit button to show the modal instead of submitting directly
+    document.getElementById("submit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        showConfirmationModal();
+    });
+
+    // Add event listener to the confirm button in the modal to continue with form submission
+    document.getElementById("confirmButton").addEventListener("click", function() {
+        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+
+    // Add event listener to the cancel button in the modal to close it
+    document.getElementById("cancelButton").addEventListener("click", function() {
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr">
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to show the confirmation modal with all form data
+    function showConfirmationModal() {
+        document.getElementById("confirmationModal").style.display = "block";
+        // Add all form data to the modal
+        let formDataDisplay = document.getElementById("formDataDisplay");
+        formDataDisplay.innerHTML = `
+            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
+            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
+            <strong>Город:</strong> ${document.getElementById("city").value}<br>
+            <strong>Район:</strong> ${document.getElementById("district").value}<br>
+            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
+            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
+            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
+            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
+            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
+            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
+            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
+            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
+            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
+            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
+        `;
+    }
+
+    // Add event listener to the submit button to show the modal instead of submitting directly
+    document.getElementById("submit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        showConfirmationModal();
+    });
+
+    // Add event listener to the confirm button in the modal to continue with form submission
+    document.getElementById("confirmButton").addEventListener("click", function() {
+        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+
+    // Add event listener to the cancel button in the modal to close it
+    document.getElementById("cancelButton").addEventListener("click", function() {
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js">
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to show the confirmation modal with all form data
+    function showConfirmationModal() {
+        document.getElementById("confirmationModal").style.display = "block";
+        // Add all form data to the modal
+        let formDataDisplay = document.getElementById("formDataDisplay");
+        formDataDisplay.innerHTML = `
+            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
+            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
+            <strong>Город:</strong> ${document.getElementById("city").value}<br>
+            <strong>Район:</strong> ${document.getElementById("district").value}<br>
+            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
+            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
+            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
+            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
+            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
+            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
+            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
+            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
+            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
+            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
+        `;
+    }
+
+    // Add event listener to the submit button to show the modal instead of submitting directly
+    document.getElementById("submit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        showConfirmationModal();
+    });
+
+    // Add event listener to the confirm button in the modal to continue with form submission
+    document.getElementById("confirmButton").addEventListener("click", function() {
+        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+
+    // Add event listener to the cancel button in the modal to close it
+    document.getElementById("cancelButton").addEventListener("click", function() {
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+});
+</script>
 <script>
   let tg = window.Telegram.WebApp;
   let submit = document.getElementById("submit");
@@ -340,6 +466,60 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to show the confirmation modal with all form data
+    function showConfirmationModal() {
+        document.getElementById("confirmationModal").style.display = "block";
+        // Add all form data to the modal
+        let formDataDisplay = document.getElementById("formDataDisplay");
+        formDataDisplay.innerHTML = `
+            <strong>Телефон:</strong> ${document.getElementById("phone").value}<br>
+            <strong>Номер телефона звонящего:</strong> ${document.getElementById("contactNumber").value}<br>
+            <strong>Город:</strong> ${document.getElementById("city").value}<br>
+            <strong>Район:</strong> ${document.getElementById("district").value}<br>
+            <strong>Улица:</strong> ${document.getElementById("street").value}<br>
+            <strong>Дом:</strong> ${document.getElementById("house").value}<br>
+            <strong>Корпус:</strong> ${document.getElementById("building").value}<br>
+            <strong>Квартира:</strong> ${document.getElementById("apartment").value}<br>
+            <strong>Подъезд:</strong> ${document.getElementById("entrance").value}<br>
+            <strong>Этаж:</strong> ${document.getElementById("floor").value}<br>
+            <strong>Код домофона:</strong> ${document.getElementById("intercomCode").value}<br>
+            <strong>Дата проведения работ:</strong> ${document.getElementById("workDate").value}<br>
+            <strong>Временной интервал работ:</strong> ${document.getElementById("workInterval").value}<br>
+            <strong>Примечания:</strong> ${document.getElementById("notes").value}<br>
+        `;
+    }
+
+    // Add event listener to the submit button to show the modal instead of submitting directly
+    document.getElementById("submit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        showConfirmationModal();
+    });
+
+    // Add event listener to the confirm button in the modal to continue with form submission
+    document.getElementById("confirmButton").addEventListener("click", function() {
+        // For now, we will just close the modal. In a real implementation, you'd proceed with the form submission or API call here.
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+
+    // Add event listener to the cancel button in the modal to close it
+    document.getElementById("cancelButton").addEventListener("click", function() {
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+});
 </script>
+
+<!-- Modal Confirmation Window -->
+<div id="confirmationModal" style="display:none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+    <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+        <h2>Подтвердите отправку данных</h2>
+        <div id="formDataDisplay"></div>
+        <p>К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
+        По выполнении работ специалист выдаст вам квитанцию и акт о поверке. Акт о поверке ваших счетчиков необходимо предоставить вашей управляющей компании (расчетный центр).</p>
+        <button id="confirmButton">ОК</button>
+        <button id="cancelButton" style="margin-left: 10px;">ОТМЕНА</button>
+    </div>
+</div>
 </body>
 </html>
