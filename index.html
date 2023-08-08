@@ -154,18 +154,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-
+    
 document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
     showConfirmationModal();
 });
 
 
     // Add event listener to the confirm button in the modal to continue with form submission
-
+    
 document.getElementById("confirmButton").addEventListener("click", function(event) {
-    event.preventDefault();
     document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
+    // Assuming the form has a method to send data to Telegram or any other place, we trigger that here
+    document.getElementById("submitForm").submit();
 });
 
 
@@ -201,18 +202,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-
+    
 document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
     showConfirmationModal();
 });
 
 
     // Add event listener to the confirm button in the modal to continue with form submission
-
+    
 document.getElementById("confirmButton").addEventListener("click", function(event) {
-    event.preventDefault();
     document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
+    // Assuming the form has a method to send data to Telegram or any other place, we trigger that here
+    document.getElementById("submitForm").submit();
 });
 
 
@@ -248,18 +250,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-
+    
 document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
     showConfirmationModal();
 });
 
 
     // Add event listener to the confirm button in the modal to continue with form submission
-
+    
 document.getElementById("confirmButton").addEventListener("click", function(event) {
-    event.preventDefault();
     document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
+    // Assuming the form has a method to send data to Telegram or any other place, we trigger that here
+    document.getElementById("submitForm").submit();
 });
 
 
@@ -504,18 +507,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Add event listener to the submit button to show the modal instead of submitting directly
-
+    
 document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
     showConfirmationModal();
 });
 
 
     // Add event listener to the confirm button in the modal to continue with form submission
-
+    
 document.getElementById("confirmButton").addEventListener("click", function(event) {
-    event.preventDefault();
     document.getElementById("confirmationModal").style.display = "none";
-    document.getElementById("submitForm").submit(); // Submit the form
+    // Assuming the form has a method to send data to Telegram or any other place, we trigger that here
+    document.getElementById("submitForm").submit();
 });
 
 
@@ -531,7 +535,7 @@ document.getElementById("confirmButton").addEventListener("click", function(even
     <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
         <h2>Подтвердите отправку данных</h2>
         <div id="formDataDisplay"></div>
-        <p>К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
+        <p>!!!К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
         По выполнении работ специалист выдаст вам квитанцию и акт о поверке. Акт о поверке ваших счетчиков необходимо предоставить вашей управляющей компании (расчетный центр).</p>
         <button id="confirmButton">ОК</button>
         <button id="cancelButton" style="margin-left: 10px;">ОТМЕНА</button>
