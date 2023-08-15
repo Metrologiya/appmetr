@@ -201,7 +201,9 @@
   // Configure flatpickr date picker with Russian locale
   flatpickr("#workDate", {
     dateFormat: "d.m.Y",
-    defaultDate: tomorrow,
+    // defaultDate: tomorrow,
+    defaultDate: tomorrow, // Завтрашняя дата будет предустановлена
+     minDate: tomorrow,     // Завтрашняя дата будет минимальной датой для выбора
     locale: "ru"
   });
   submit.addEventListener("click", (event) => {
