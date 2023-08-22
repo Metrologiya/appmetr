@@ -198,9 +198,14 @@
   // Get tomorrow's date
   let tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
+  // Получаем сегодняшнюю дату
+  let today = new Date();
   // Configure flatpickr date picker with Russian locale
   flatpickr("#workDate", {
     dateFormat: "d.m.Y",
+    defaultDate: today,   // Сегодняшняя дата будет предустановлена
+    minDate: today,       // Сегодняшняя дата будет минимальной датой для выбора
+
     // defaultDate: tomorrow,
     // defaultDate: tomorrow, // Завтрашняя дата будет предустановлена
     // minDate: tomorrow,   //Раскоментить если надо будет выбирать только завтрашнюю дату  // Завтрашняя дата будет минимальной датой для выбора
