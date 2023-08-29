@@ -111,12 +111,8 @@
 <div>
 <label for="workInterval">Временной интервал работ</label>
 <select id="workInterval" name="workInterval">
-<option value="8:00 - 10:00">8:00 - 10:00</option>
-<option value="10:00 - 12:00">10:00 - 12:00</option>
-<option value="12:00 - 14:00">12:00 - 14:00</option>
-<option value="14:00 - 16:00">14:00 - 16:00</option>
-<option value="16:00 - 18:00">16:00 - 18:00</option>
-<option value="18:00 - 20:00">18:00 - 20:00</option>
+<option value="8:00 - 13:00">8:00 - 10:00</option>
+<option value="13:00 - 18:00">10:00 - 12:00</option>
 </select>
 </div>
 <div>
@@ -195,9 +191,9 @@
   }
   loadCities();
   loadDistricts();
-  // Get tomorrow's date
-  let tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
+  // Получение завтрашней даты
+  // let tomorrow = new Date();
+  // tomorrow.setDate(tomorrow.getDate() + 1);
   // Получаем сегодняшнюю дату
   let today = new Date();
   // Configure flatpickr date picker with Russian locale
