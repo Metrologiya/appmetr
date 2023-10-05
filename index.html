@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta charset="utf-8"/>
@@ -16,6 +15,46 @@
 </head>
 <body>
 <form data-content-type="web_app_data" enctype="multipart/form-data">
+<div>
+<label for="city">Город</label>
+<select id="city" name="city">
+<option selected=""></option>
+</select>
+</div>
+<div>
+<label for="district">Район</label>
+<select id="district" name="district">
+<option selected="" value="ЦАО"></option>
+</select>
+</div>
+<div>
+<label for="street">Улица</label>
+<input id="street" name="street" placeholder="Улица" type="text"/>
+</div>
+<div>
+<label for="house">Дом</label>
+<input id="house" name="house" placeholder="Дом" type="text"/>
+</div>
+<div>
+<label for="building">Корпус</label>
+<input id="building" name="building" placeholder="Корпус" type="text"/>
+</div>
+<div>
+<label for="apartment">Квартира</label>
+<input id="apartment" name="apartment" placeholder="Квартира" type="text"/>
+</div>
+<div>
+<label for="entrance">Подъезд</label>
+<input id="entrance" name="entrance" placeholder="Подъезд" type="text"/>
+</div>
+<div>
+<label for="floor">Этаж</label>
+<input id="floor" name="floor" placeholder="Этаж" type="text"/>
+</div>
+<div>
+<label for="intercomCode">Код домофона</label>
+<input id="intercomCode" name="intercomCode" placeholder="Код домофона" type="text"/>
+</div>
 <div>
 <label for="hvsQuantity">Количество ХВС</label>
 <select id="hvsQuantity" name="hvsQuantity">
@@ -65,46 +104,6 @@
 <input id="contactNumber" inputmode="numeric" name="contactNumber" placeholder="Номер телефона звонящего" type="text" value="+7"/>
 </div>
 <div>
-<label for="city">Город</label>
-<select id="city" name="city">
-<option selected=""></option>
-</select>
-</div>
-<div>
-<label for="district">Район</label>
-<select id="district" name="district">
-<option selected="" value="ЦАО"></option>
-</select>
-</div>
-<div>
-<label for="street">Улица</label>
-<input id="street" name="street" placeholder="Улица" type="text"/>
-</div>
-<div>
-<label for="house">Дом</label>
-<input id="house" name="house" placeholder="Дом" type="text"/>
-</div>
-<div>
-<label for="building">Корпус</label>
-<input id="building" name="building" placeholder="Корпус" type="text"/>
-</div>
-<div>
-<label for="apartment">Квартира</label>
-<input id="apartment" name="apartment" placeholder="Квартира" type="text"/>
-</div>
-<div>
-<label for="entrance">Подъезд</label>
-<input id="entrance" name="entrance" placeholder="Подъезд" type="text"/>
-</div>
-<div>
-<label for="floor">Этаж</label>
-<input id="floor" name="floor" placeholder="Этаж" type="text"/>
-</div>
-<div>
-<label for="intercomCode">Код домофона</label>
-<input id="intercomCode" name="intercomCode" placeholder="Код домофона" type="text"/>
-</div>
-<div>
 <label for="workDate">Дата проведения работ</label>
 <input id="workDate" name="workDate" placeholder="Дата проведения работ" readonly="" type="text"/>
 </div>
@@ -120,13 +119,14 @@
 <textarea id="notes" name="notes" placeholder="Примечания"></textarea>
 </div>
 <div id="error"></div>
-  <input id="agreeCheckbox" type="checkbox"/><label for="agreeCheckbox"> Все поля заполнены верно!</label>
+<input id="agreeCheckbox" type="checkbox"/><label for="agreeCheckbox"> Все поля заполнены верно!</label>
 <div class="button-group">
 <button disabled="disabled" id="submit" type="submit">Создать заявку</button>
 <button id="checkButton" type="button">Проверить</button>
 <button id="reset" style="margin-left: 10px" type="reset">Отмена</button>
 </div>
 </form>
+
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
