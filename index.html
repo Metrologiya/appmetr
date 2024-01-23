@@ -92,8 +92,8 @@
 <input id="totalAmount" name="totalAmount" placeholder="Сумма" type="text"/>
 </div>
 <div>
-<label for="phone">Телефон</label>
-<input id="phone" inputmode="numeric" name="phone" placeholder="Телефон" type="text" value="+7"/>
+<label for="phone">Контактный номер телефона</label>
+<input id="phone" inputmode="numeric" name="phone" placeholder="Контактный номер телефона" type="text" value="+7"/>
 </div>
 <div>
 <input id="copyPhoneCheckbox" name="copyPhoneCheckbox" type="checkbox"/>
@@ -112,7 +112,6 @@
 <select id="workInterval" name="workInterval">
 <option value="8:00 - 13:00">8:00 - 13:00</option>
 <option value="13:00 - 18:00">13:00 - 18:00</option>
-<option value="00:00-00:00">00:00-00:00</option>
 </select>
 </div>
 <div>
@@ -247,7 +246,7 @@
     }
     if (phone.value.trim() === "" || !/^\+7\d{10}$/.test(phone.value)) {
       phone.classList.add("error");
-      invalidFields.push("Телефон");
+      invalidFields.push("Контактный номер телефона");
     } else {
       phone.classList.remove("error");
     }
@@ -362,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
         content += 'Количество ХВС: ' + document.getElementById('hvsQuantity').value + '<br>';
         content += 'Количество ГВС: ' + document.getElementById('gvsQuantity').value + '<br>';
         content += 'Общая сумма: ' + document.getElementById('totalAmount').value + '<br>';
-        content += 'Телефон: ' + document.getElementById('phone').value + '<br>';
+        content += 'Контактный номер телефона: ' + document.getElementById('phone').value + '<br>';
         content += 'Номер контакта: ' + document.getElementById('contactNumber').value + '<br>';
         content += 'Город: ' + document.getElementById('city').value + '<br>';
         content += 'Район: ' + document.getElementById('district').value + '<br>';
